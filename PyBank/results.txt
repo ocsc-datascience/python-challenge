@@ -1,0 +1,14 @@
+
+Financial Analysis
+------------------------------
+Total Months: 41
+Total: $18971412
+Average Change: $-6758.98
+Average Change Magnitude: $655158.22
+Greatest Increase in Profits: Feb-16 ($1837235)
+Greatest Decrease in Profits: Aug-14 ($-1779747)
+
+Note: The large change magnitude together with the small 
+average change suggests that the business profits are fluctuating
+wildly from month to month. This indicates trouble.
+
