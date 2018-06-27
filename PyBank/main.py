@@ -42,7 +42,6 @@ max_change = ['',-100000000]
 min_change = ['',100000000]
 
 for i in range(len(changes)):
-    print(changes[i][1])
     av_change += changes[i][1]
     av_change_mag += abs(changes[i][1])
     if changes[i][1] > max_change[1]:
@@ -57,17 +56,30 @@ for i in range(len(changes)):
 av_change /= len(changes)
 av_change_mag /= len(changes)
 
-print("")
-print("Financial Analysis")
-print("-"*30)
-print(f"Total Months: {n_months}")
-print(f"Total: ${prof_sum}")
-print(f"Average Change: ${av_change:.2f}")
-print(f"Average Change Magnitude: ${av_change_mag:.2f}")      
-print(f"Greatest Increase in Profits: {max_change[0]} (${max_change[1]})")
-print(f"Greatest Decrease in Profits: {min_change[0]} (${min_change[1]})")
-print("")
-print("Note: The large change magnitude together with the small \n"\
+# set up results list
+results = []
+results.append("")
+results.append("Financial Analysis")
+results.append("-"*30)
+results.append(f"Total Months: {n_months}")
+results.append(f"Total: ${prof_sum}")
+results.append(f"Average Change: ${av_change:.2f}")
+results.append(f"Average Change Magnitude: ${av_change_mag:.2f}")      
+results.append(f"Greatest Increase in Profits: {max_change[0]} (${max_change[1]})")
+results.append(f"Greatest Decrease in Profits: {min_change[0]} (${min_change[1]})")
+results.append("")
+results.append("Note: The large change magnitude together with the small \n"\
       "average change suggests that the business profits are fluctuating\n"\
       "wildly from month to month. This indicates trouble.")
-print("")
+results.append("")
+
+# print results to stdout
+for line in results:
+    print(line)
+
+# write results to file
+with open("results.txt",'w') as outfile:
+    for line in results:
+        outfile.write(line+'\n')
+
+
