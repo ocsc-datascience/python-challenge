@@ -21,12 +21,12 @@ n_months = len(fin_data)
 
 prof_sum = 0
 for i in range(n_months):
-    prof_sum += int(fin_data[i]['Revenue'])
+    prof_sum += int(fin_data[i]['Profit/Losses'])
 
 changes = []
 for i in range(1,n_months):
-    tmp_change = int(fin_data[i]['Revenue']) - \
-                 int(fin_data[i-1]['Revenue'])
+    tmp_change = int(fin_data[i]['Profit/Losses']) - \
+                 int(fin_data[i-1]['Profit/Losses'])
     changes.append( ( fin_data[i]['Date'], tmp_change ) )
 
 # average change:
